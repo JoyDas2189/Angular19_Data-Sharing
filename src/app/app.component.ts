@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { ExpenseTrackerComponent } from "./expense-tracker/expense-tracker.component";
+import { EventPlannerComponent } from "./event-planner/event-planner.component";
+import { JobApplicationManagementSystemComponent } from "./job-application-management-system/job-application-management-system.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [ExpenseTrackerComponent, EventPlannerComponent, JobApplicationManagementSystemComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

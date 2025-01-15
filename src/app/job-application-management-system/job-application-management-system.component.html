@@ -1,0 +1,19 @@
+<app-job-application-management-system-list></app-job-application-management-system-list>
+<section>
+  <table *ngIf="applicants.length > 0">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Position</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let applicant of applicants">
+            <td> {{applicant.name}} </td>
+            <td> {{applicant.email}} </td>
+            <td> {{applicant.position}} </td>
+        </tr>
+    </tbody>
+  </table>
+</section>

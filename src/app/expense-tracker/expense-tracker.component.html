@@ -1,0 +1,35 @@
+<div>
+    <h1 style="text-align: center">Expense Tracker</h1>
+  </div>
+  
+  <!-- Child Component -->
+  <app-child-component (addExpense)="handleAddExpense($event)"></app-child-component>
+  
+  <!-- Expense List -->
+  <div *ngIf="expenses.length > 0" style="margin-top: 20px">
+    <h2>Expense List</h2>
+    <table class="expense-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Amount</th>
+          <th>Category</th>
+          <th>Description</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let expense of expenses; let i = index">
+          <td>{{ expense.date }}</td>
+          <td>{{ expense.amount }}</td>
+          <td>{{ expense.category }}</td>
+          <td>{{ expense.description }}</td>
+          <td>
+            <button (click)="editExpense(i)">Edit</button>
+            <button (click)="deleteExpense(i)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

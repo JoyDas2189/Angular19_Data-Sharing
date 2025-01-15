@@ -1,0 +1,28 @@
+<form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label>Title:</label>
+    <input type="text" formControlName="title" />
+  </div>
+
+  <div>
+    <label>Date:</label>
+    <input type="date" formControlName="date" />
+  </div>
+
+  <div>
+    <label>Location:</label>
+    <input type="text" formControlName="location" />
+  </div>
+
+  <div formArrayName="guests">
+    <label>Guests:</label>
+    <div *ngFor="let guest of guests.controls; let i = index">
+      <input [formControlName]="i" />
+      <button type="button" (click)="removeGuest(i)">Remove</button>
+    </div>
+    <button type="button" (click)="addGuest()">Add Guest</button>
+  </div>
+
+  <button type="submit">{{ eventData ? 'Update Event' : 'Add Event' }}</button>
+  <button type="button" *ngIf="eventData" (click)="onCancel()">Cancel</button>
+</form>

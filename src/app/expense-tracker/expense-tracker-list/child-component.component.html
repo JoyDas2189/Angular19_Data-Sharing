@@ -1,0 +1,28 @@
+<div class="container">
+  <div>
+    <form [formGroup]="expenseForm" (ngSubmit)="onSubmit()">
+      <label for="date">Date</label>
+      <input type="date" placeholder="Select a date" formControlName="date" />
+      <label for="amount">Amount</label>
+      <input type="number" placeholder="Enter amout" formControlName="amount" />
+      <label for="category">Category</label>
+      <select formControlName="category">
+        <option value="">Select a category</option>
+        <option *ngFor="let category of categories" [value]="category.name">
+          {{ category.name }}
+        </option>
+      </select>
+      <label for="description">Description</label>
+      <textarea
+        rows="5"
+        cols="50"
+        placeholder="Write description"
+        formControlName="description"
+      ></textarea>
+
+      <button type="submit" [disabled]="expenseForm.invalid">
+        Add Expense
+      </button>
+    </form>
+  </div>
+</div>

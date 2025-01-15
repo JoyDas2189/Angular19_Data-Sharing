@@ -1,0 +1,19 @@
+<form [formGroup]="jobForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="name">Name</label>
+        <input type="text" placeholder="Enter name" formControlName="name">
+    </div>
+    <div>
+        <label for="email">Email</label>
+        <input type="email" placeholder="Enter email" formControlName="email">
+    </div>
+    <div>
+        <label for="posiiton">Position</label>
+        <input type="text" placeholder="Enter posiiton" formControlName="position">
+    </div>
+    <div>
+        <label for="name">Resume</label>
+        <input type="file" placeholder="Enter name" formControlName="resume">
+    </div>
+    <button type="submit" [disabled]="jobForm.invalid">Submit</button>
+</form>

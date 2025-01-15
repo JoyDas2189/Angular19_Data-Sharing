@@ -1,0 +1,21 @@
+<div>
+  <h1 style="text-align: center;">Event Planner</h1>
+
+  <app-event-planner-list
+    [eventData]="currentEvent"
+    (submitEvent)="handleEventSubmit($event)"
+  >
+</app-event-planner-list>
+
+  <h2 *ngIf="events.length > 0">Event List</h2>
+  <ul>
+    <li *ngFor="let event of events; let i = index">
+      <strong>{{ event.title }}</strong> - {{ event.date }} - {{ event.location }}
+      <ul>
+        <li *ngFor="let guest of event.guests">{{ guest }}</li>
+      </ul>
+      <button (click)="editEvent(event)">Edit</button>
+      <button (click)="deleteEvent(i)">Delete</button>
+    </li>
+  </ul>
+</div>
