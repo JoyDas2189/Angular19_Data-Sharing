@@ -23,9 +23,6 @@ export class ExpenseTrackerComponent {
     }
   }
 
-  editExpense(index: number): void {
-    this.editingExpense = { ...this.expenses[index] };
-  }
 
   deleteExpense(index: number): void {
     this.expenses.splice(index, 1);
